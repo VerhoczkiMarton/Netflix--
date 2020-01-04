@@ -1,6 +1,5 @@
 package com.verho.videorecommendation;
 
-import com.verho.videorecommendation.model.Recommendation;
 import com.verho.videorecommendation.repository.RecommendationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -35,27 +34,7 @@ public class VideoRecommendationApplication {
 	@Profile("production")
 	public CommandLineRunner init() {
 		return args -> {
-			Recommendation recommendation0 = Recommendation.builder()
-					.comment("Nice")
-					.rating(5)
-					.videoId(0L)
-					.build();
 
-			Recommendation recommendation1 = Recommendation.builder()
-					.comment("Yea its nice")
-					.rating(4)
-					.videoId(0L)
-					.build();
-
-			Recommendation recommendation2 = Recommendation.builder()
-					.comment("I dont understand")
-					.rating(1)
-					.videoId(2L)
-					.build();
-
-			recommendationRepository.save(recommendation0);
-			recommendationRepository.save(recommendation1);
-			recommendationRepository.save(recommendation2);
 		};
 	}
 }
