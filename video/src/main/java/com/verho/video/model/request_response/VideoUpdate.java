@@ -1,4 +1,4 @@
-package com.verho.video.model.request;
+package com.verho.video.model.request_response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

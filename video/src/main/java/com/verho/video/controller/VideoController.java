@@ -1,7 +1,7 @@
 package com.verho.video.controller;
 
 import com.verho.video.model.Video;
-import com.verho.video.model.request.VideoUpdate;
+import com.verho.video.model.request_response.VideoUpdate;
 import com.verho.video.service.UpdateService;
 import com.verho.video.service.VideoService;
 import lombok.AllArgsConstructor;

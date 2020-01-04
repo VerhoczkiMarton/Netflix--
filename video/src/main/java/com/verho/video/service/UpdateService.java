@@ -1,6 +1,6 @@
 package com.verho.video.service;
 
-import com.verho.video.model.request.VideoUpdate;
+import com.verho.video.model.request_response.VideoUpdate;
 import com.verho.video.repository.VideoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
