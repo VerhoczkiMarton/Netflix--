@@ -2,7 +2,6 @@ package com.verho.videorecommendation.service;
 
 import com.verho.videorecommendation.model.Recommendation;
 import com.verho.videorecommendation.model.request.RequestRecommendation;
-import com.verho.videorecommendation.model.request.RequestVideo;
 import com.verho.videorecommendation.repository.RecommendationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,8 +14,7 @@ public class RecommendationService {
     RecommendationRepository recommendationRepository;
 
 
-    public List<Recommendation> getRecommendationsByVideoId(RequestVideo requestVideo) {
-        Long videoId = requestVideo.getVideoId();
+    public List<Recommendation> getRecommendationsByVideoId(Long videoId) {
         return recommendationRepository.findAllByVideoId(videoId);
     }
 
