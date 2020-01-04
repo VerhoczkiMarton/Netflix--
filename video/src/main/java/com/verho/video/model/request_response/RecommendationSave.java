@@ -8,5 +8,4 @@ import lombok.Data;
 public class RecommendationSave {
     private Integer rating;
     private String comment;
-    private Long videoId;
 }
