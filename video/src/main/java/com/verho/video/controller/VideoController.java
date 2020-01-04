@@ -2,6 +2,7 @@ package com.verho.video.controller;
 
 import com.verho.video.model.Video;
 import com.verho.video.model.request_response.VideoUpdate;
+import com.verho.video.model.request_response.VideoWithRecommendations;
 import com.verho.video.service.UpdateService;
 import com.verho.video.service.VideoService;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,11 @@ public class VideoController {
     @GetMapping
     List<Video> getAllVideos() {
         return videoService.getAllVideos();
+    }
+
+    @GetMapping("/rec")
+    List<VideoWithRecommendations> getAllVideosWithRecommendations() {
+        return videoService.getAllVideosWithRecommendations();
     }
 
     @PostMapping("/{videoId}")

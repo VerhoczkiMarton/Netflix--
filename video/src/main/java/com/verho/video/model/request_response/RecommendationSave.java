@@ -1,15 +1,11 @@
-package com.verho.video.model;
-
+package com.verho.video.model.request_response;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-@Builder
-public class Recommendation {
-    private Long id;
+public class RecommendationSave {
     private Integer rating;
     private String comment;
     private Long videoId;
