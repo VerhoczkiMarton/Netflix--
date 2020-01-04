@@ -12,7 +12,6 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/video")
 @AllArgsConstructor
 public class VideoController {
 
@@ -25,7 +24,7 @@ public class VideoController {
         return videoService.getAllVideos();
     }
 
-    @GetMapping("/rec")
+    @GetMapping("/all")
     List<VideoWithRecommendations> getAllVideosWithRecommendations() {
         return videoService.getAllVideosWithRecommendations();
     }
