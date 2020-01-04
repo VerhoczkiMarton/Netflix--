@@ -13,4 +13,9 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     @Modifying
     @Query("UPDATE Video v SET v.name = ?2 WHERE v.id = ?1")
     void updateVideoNameById(Long id, String name);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Video v SET v.url = ?2 WHERE v.id = ?1")
+    void updateVideoUrlById(Long id, String url);
 }
