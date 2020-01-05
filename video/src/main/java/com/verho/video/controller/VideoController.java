@@ -24,6 +24,12 @@ public class VideoController {
         return videoService.getAllVideos();
     }
 
+    @GetMapping("/{videoId}")
+    Video getVideoInfo(@PathVariable("videoId") Long videoId) throws Exception {
+        Video video = videoService.getVideoById(videoId);
+        return video;
+    }
+
     @GetMapping("/all")
     List<VideoWithRecommendations> getAllVideosWithRecommendations() {
         return videoService.getAllVideosWithRecommendations();

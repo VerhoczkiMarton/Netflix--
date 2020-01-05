@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,8 +25,14 @@ public class VideoService {
     public List<VideoWithRecommendations> getAllVideosWithRecommendations() {
         return getAllVideos().stream().map(video -> VideoWithRecommendations.builder()
                 .name(video.getName())
-                .url(video.getUrl())
+                .url(video.getYoutubeId())
                 .recommendations(videoRecommendationsService.getRecommendationsByVideoId(video.getId()))
                 .build()).collect(Collectors.toList());
+    }
+
+    public Video getVideoById(Long videoId) throws Exception {
+        Optional<Video> video = videoRepository.findById(videoId);
+        if (video.isPresent()) return video.get();
+        throw new Exception();
     }
 }

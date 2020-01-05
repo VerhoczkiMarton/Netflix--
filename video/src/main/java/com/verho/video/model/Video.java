@@ -21,5 +21,5 @@ public class Video {
 
     private String name;
 
-    private String url;
+    private String youtubeId;
 }
