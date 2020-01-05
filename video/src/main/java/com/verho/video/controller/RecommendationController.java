@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import org.json.JSONException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @AllArgsConstructor
@@ -22,5 +24,10 @@ public class RecommendationController {
                         .videoId(videoId)
                         .build()
         );
+    }
+
+    @GetMapping("/{videoId}/recommendation")
+    List<Recommendation> getRecommendationsFroVideo(@PathVariable("videoId") Long videoId) {
+        return videoRecommendationsService.getRecommendationsByVideoId(videoId);
     }
 }
